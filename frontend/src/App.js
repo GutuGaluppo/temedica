@@ -1,10 +1,9 @@
-import './App.css';
-import Header from './components/Header/Header';
+import Header from './components/Header';
 import List from './components/DiseaseList/DiseaseList';
 
 function App() {
 	return (
-		<div className="App">
+		<div class="flex flex-col justify-center aligned-center max-w-3xl mx-auto">
 			<Header />
 			<List />
 		</div>
