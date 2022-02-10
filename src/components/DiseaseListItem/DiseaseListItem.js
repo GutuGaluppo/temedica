@@ -1,19 +1,20 @@
 import React from 'react'
-import './ListItem.css'
+import './DiseaseListItem.css'
 
-function ListItem({ drug }) {
+function DiseaseListItem({ drug }) {
 	return <li key={drug.id}>
 		<div className="list-header">
 			<h3>{drug.name}</h3>
-			<smal>
+			<small>
+				<span>Released at: </span>
 				<time datetime={drug.released}>{drug.released}</time>
-			</smal>
+			</small>
 		</div>
 		<ul>
 			{
-				drug.diseases?.map(deseas => {
-					return <li key={deseas[0]}>
-						{deseas}
+				drug.diseases?.map(disease => {
+					return <li key={disease} className="disease-list">
+						{disease}
 					</li>
 				})
 			}
@@ -24,4 +25,4 @@ function ListItem({ drug }) {
 	</li>
 }
 
-export default ListItem
+export default DiseaseListItem
