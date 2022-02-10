@@ -1,14 +1,11 @@
 import './App.css';
-import List from './components/List/List';
-import logo from './logo.png';
+import Header from './components/Header/Header';
+import List from './components/DiseaseList/DiseaseList';
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" width="50px"/>
-				<a href="">Temedica</a>
-			</header>
+			<Header />
 			<List />
 		</div>
 	);
