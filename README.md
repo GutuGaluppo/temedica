@@ -8,8 +8,7 @@ Runs `npm start` on backend and frontend
 
 - The API will be available under the [http://localhost:3001/api/drugs](http://localhost:3001/api/drugs) url.
 - Open [http://localhost:3000](http://localhost:3000) to view the App in your browser.
-<br/>
-<br/>
+
 
 ### List of things to improve if I have more time
 
@@ -18,8 +17,7 @@ Runs `npm start` on backend and frontend
 - Typescript would be great as well.
 - Test the application.
 - Create separate Utils file to create generic functions.
-<br/>
-<br/>
+
 
 ### Final thoughts
 
