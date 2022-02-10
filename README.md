@@ -20,7 +20,7 @@ Runs `npm start` on backend and frontend
 - Create separate Utils file to create generic functions.
 <br/>
 <br/>
-### final thoughts
+## Final thoughts
 
 - In general, it was very pleasant to do it.
 - Some details I had to figured myself based on the mockup but there was no instructions to do it <em>(not sure if this was part of the challenge or not)</em>.
