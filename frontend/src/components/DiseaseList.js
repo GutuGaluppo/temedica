@@ -1,13 +1,12 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import ListItem from './DiseaseListItem'
 
 function DiseaseList() {
 	const [drugs, setDrugs] = useState([])
 	const [nameFilter, setNameFilter] = useState('')
+	const [isLoading, setIsLoading] = useState(true)
 
 	const handleNameFilter = (e) => {
-		if (e.target.value === '') return setDrugs([])
-		fetchApi()
 		setNameFilter(e.target.value.toLowerCase())
 	}
 
@@ -16,17 +15,23 @@ function DiseaseList() {
 		return name.match(regex);
 	}
 
-	const fetchApi = () => {
+	const fetchDrugs = () => {
 		return fetch('http://localhost:3001/api/drugs')
 			.then((response) => response.json())
 			.then((data) => {
+				setIsLoading(false)
 				setDrugs(data.drugs)
 			})
 			.catch(err => console.log(err))
 	}
 
+	useEffect(() => {
+		fetchDrugs()
+	},[])
+	
 	const filteredList = useMemo(() => {
-		if (!nameFilter) return drugs
+
+		if (!nameFilter) return []
 
 		const filterByDrugName = drugs?.filter(drug => {
 			const drugSub = drug.name.toLowerCase();
@@ -35,6 +40,8 @@ function DiseaseList() {
 
 		return filterByDrugName
 	}, [nameFilter, drugs])
+
+	if (isLoading) return <h1>Loading...</h1>;
 
 	return <div>
 		<div class="w-4/5 md:w-full mx-auto">
